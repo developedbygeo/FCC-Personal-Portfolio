@@ -50,18 +50,6 @@ a {
   --polishedpine: #619b8a;
 }
 
-button {
-  padding: 2rem 6rem;
-  background: rgba(19, 28, 39, 0.3);
-  border: none;
-  color: white;
-  font-size: 1.8rem;
-  cursor: pointer;
-  border-radius: 5rem;
-  transition: background 0.5s ease-in-out;
-  animation: ButtonAnimation 5s infinite;
-}
-
 button:hover {
   background: rgba(19, 28, 39, 1);
 }
@@ -134,8 +122,6 @@ button:hover {
   width: 100%;
   text-align: center;
   text-decoration: underline;
-}
-.color-span {
 }
 .color-p {
   color: white;
@@ -210,7 +196,6 @@ button:hover {
 .contact {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 4rem;
   margin: 8% 5%;
   width: auto;
 }
@@ -245,6 +230,9 @@ footer p {
   html {
     font-size: 50%;
   }
+  .main-header {
+    position: static;
+  }
   .navbar ul {
     display: none;
   }
@@ -253,7 +241,7 @@ footer p {
     position: fixed;
     top: 3rem;
     right: 1rem;
-    z-index: 5;
+    z-index: 11;
     cursor: pointer;
   }
   .burger div {
@@ -269,23 +257,30 @@ footer p {
     display: block;
     min-height: 85vh;
     z-index: 2;
-    background: lightpink;
-    display: flex;
+    background: rgb(254, 127, 45);
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
     transform: translateX(-100%);
     display: none;
+    background: rgb(35, 61, 77);
+    background: linear-gradient(
+      166deg,
+      rgba(35, 61, 77, 1) 33%,
+      rgba(254, 127, 45, 1) 100%
+    );
   }
-  .slide-menu ul {
+  .slide-links {
     flex: 1;
     list-style: none;
     text-decoration: underline;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
-    transform: translateX(-200%);
+    transform: translateX(-500%);
+    color: white;
     display: none;
+    transition: 1s all ease-in;
   }
   .projects-grid {
     grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
@@ -301,7 +296,55 @@ footer p {
     font-size: 2rem;
     border-radius: 1rem;
   }
+  .contact {
+    flex-direction: column;
+  }
   footer p {
     font-size: 1.4rem;
+  }
+  .nav-link {
+    font-size: 3rem;
+  }
+  .line1 {
+    transition: 0.5s all ease-in-out;
+  }
+  .line2 {
+    transition: 0.3s all ease;
+  }
+  .line3 {
+    transition: 0.7s all ease;
+  }
+
+  /* Toggles for burger */
+  .slide-menu-active {
+    display: flex;
+    transform: translateX(0%);
+    position: fixed;
+    width: 100%;
+    min-height: 100vh;
+    z-index: 10;
+    transition: all 1s ease;
+  }
+  .slide-links-active {
+    display: flex;
+    transform: translateX(0%);
+  }
+  .navbar-off {
+    display: none;
+  }
+  .body-overflow-active {
+    overflow-y: hidden;
+  }
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-1.9rem, 0.45rem);
+    box-shadow: none;
+  }
+  .toggle .line2 {
+    opacity: 0;
+    box-shadow: none;
+  }
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-1rem, 0.5rem);
+    box-shadow: none;
   }
 }
